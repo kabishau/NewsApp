@@ -24,4 +24,21 @@ class NewsDetailViewController: UIViewController, WKNavigationDelegate {
         webView?.load(request)
         
     }
+    
+    // don't need to call in directly; it's called right after web view finishes loading
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+        webView.evaluateJavaScript("document.readyState") { (result, error) in
+            
+            if result == nil || error != nil {
+                return
+            }
+            
+            webView.evaluateJavaScript("document.body.offsetHeight", completionHandler: { (result, error) in
+                if let height = result as? CGFloat {
+                    self.webViewHeightConstraint?.constant = height
+                }
+            })
+        }
+    }
 }
