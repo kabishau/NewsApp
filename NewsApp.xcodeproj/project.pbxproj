@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B24FF842176C1EB00AF0D33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B24FF832176C1EB00AF0D33 /* WebKit.framework */; };
+		5B24FF872176C2CB00AF0D33 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24FF852176C2CB00AF0D33 /* NewsDetailViewController.swift */; };
+		5B24FF882176C2CB00AF0D33 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B24FF862176C2CB00AF0D33 /* NewsDetailViewController.xib */; };
 		6B23302A2174E4DE003492D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2330292174E4DE003492D3 /* AppDelegate.swift */; };
 		6B2330312174E4E0003492D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B2330302174E4E0003492D3 /* Assets.xcassets */; };
 		6B2330342174E4E0003492D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B2330322174E4E0003492D3 /* LaunchScreen.storyboard */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B24FF832176C1EB00AF0D33 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5B24FF852176C2CB00AF0D33 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		5B24FF862176C2CB00AF0D33 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		6B2330262174E4DE003492D3 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2330292174E4DE003492D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B2330302174E4E0003492D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B24FF842176C1EB00AF0D33 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B24FF822176C1EB00AF0D33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B24FF832176C1EB00AF0D33 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B23301D2174E4DE003492D3 = {
 			isa = PBXGroup;
 			children = (
 				6B2330282174E4DE003492D3 /* NewsApp */,
 				6B2330272174E4DE003492D3 /* Products */,
+				5B24FF822176C1EB00AF0D33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +73,8 @@
 				6B2330322174E4E0003492D3 /* LaunchScreen.storyboard */,
 				6B2330352174E4E0003492D3 /* Info.plist */,
 				6B23303B2174E842003492D3 /* NewsTableViewController.swift */,
+				5B24FF852176C2CB00AF0D33 /* NewsDetailViewController.swift */,
+				5B24FF862176C2CB00AF0D33 /* NewsDetailViewController.xib */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -119,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B24FF882176C2CB00AF0D33 /* NewsDetailViewController.xib in Resources */,
 				6B2330342174E4E0003492D3 /* LaunchScreen.storyboard in Resources */,
 				6B2330312174E4E0003492D3 /* Assets.xcassets in Resources */,
 			);
@@ -131,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B24FF872176C2CB00AF0D33 /* NewsDetailViewController.swift in Sources */,
 				6B23303C2174E842003492D3 /* NewsTableViewController.swift in Sources */,
 				6B23302A2174E4DE003492D3 /* AppDelegate.swift in Sources */,
 			);

@@ -47,4 +47,14 @@ class NewsTableViewController: UITableViewController {
         
         return cell!
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailVC = NewsDetailViewController(nibName: "NewsDetailViewController", bundle: nil)
+        
+        detailVC.title = titles[indexPath.row]
+        detailVC.author = authors[indexPath.row]
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
