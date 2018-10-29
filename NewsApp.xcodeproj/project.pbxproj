@@ -14,6 +14,7 @@
 		6B2330312174E4E0003492D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B2330302174E4E0003492D3 /* Assets.xcassets */; };
 		6B2330342174E4E0003492D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B2330322174E4E0003492D3 /* LaunchScreen.storyboard */; };
 		6B23303C2174E842003492D3 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23303B2174E842003492D3 /* NewsTableViewController.swift */; };
+		6B4D0E9E2187A2EE00EBF914 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B4D0E9D2187A2EE00EBF914 /* Podfile */; };
 		BFE5DA787A5A8227E02D5CC6 /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71E94E9D35122D6800FDB93 /* Pods_NewsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		6B2330332174E4E0003492D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B2330352174E4E0003492D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B23303B2174E842003492D3 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		6B4D0E9D2187A2EE00EBF914 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		A71E94E9D35122D6800FDB93 /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF45875FB98307BDF49399BC /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 		6B23301D2174E4DE003492D3 = {
 			isa = PBXGroup;
 			children = (
+				6B4D0E9D2187A2EE00EBF914 /* Podfile */,
 				6B2330282174E4DE003492D3 /* NewsApp */,
 				6B2330272174E4DE003492D3 /* Products */,
 				5B24FF822176C1EB00AF0D33 /* Frameworks */,
@@ -157,6 +160,7 @@
 			files = (
 				5B24FF882176C2CB00AF0D33 /* NewsDetailViewController.xib in Resources */,
 				6B2330342174E4E0003492D3 /* LaunchScreen.storyboard in Resources */,
+				6B4D0E9E2187A2EE00EBF914 /* Podfile in Resources */,
 				6B2330312174E4E0003492D3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
