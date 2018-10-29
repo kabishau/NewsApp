@@ -4,6 +4,7 @@ import SwiftyJSON
 
 // global variable, it's outside the class
 // private makes it visible and accessible within current file
+// singleton - global constant that can be accessed throuth a class property
 private let _API_SharedInstance = API()
 
 class API {
