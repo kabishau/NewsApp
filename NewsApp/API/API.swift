@@ -13,4 +13,28 @@ class API {
     class var sharedInstance: API {
         return _API_SharedInstance
     }
+    
+    static let Fee_JSON_URL: URL = URL(string: "https://learnappmaking.com/feed/json")!
+    
+    
+    func requestArticles() -> Void {
+        Alamofire.request(API.Fee_JSON_URL).responseJSON { (response) in
+            if let data = response.data {
+                do {
+                    let json = try JSON(data: data)
+                    print("JSON: \(json)")
+                    self.processArticles(json: json)
+                }
+                catch {
+                    print("JSON error: \(error)")
+                }
+            } else {
+                print(response.result.error ?? "Unknown error")
+            }
+        }
+    }
+    
+    func processArticles(json: JSON) {
+        print(json)
+    }
 }
