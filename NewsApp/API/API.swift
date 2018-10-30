@@ -14,11 +14,11 @@ class API {
         return _API_SharedInstance
     }
     
-    static let Fee_JSON_URL: URL = URL(string: "https://learnappmaking.com/feed/json")!
+    static let Feed_JSON_URL: URL = URL(string: "https://learnappmaking.com/feed/json")!
     
     
     func requestArticles() -> Void {
-        Alamofire.request(API.Fee_JSON_URL).responseJSON { (response) in
+        Alamofire.request(API.Feed_JSON_URL).responseJSON { (response) in
             if let data = response.data {
                 do {
                     let json = try JSON(data: data)
