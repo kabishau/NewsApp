@@ -22,7 +22,6 @@ class API {
             if let data = response.data {
                 do {
                     let json = try JSON(data: data)
-                    print("JSON: \(json)")
                     self.processArticles(json: json)
                 }
                 catch {
@@ -35,6 +34,51 @@ class API {
     }
     
     func processArticles(json: JSON) {
-        print(json)
+        
+        var articles = [Article]()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        
+        // SwiftyJSON
+        for (_, item) in json {
+            
+            let article = Article()
+            
+            if let id: Int = item["id"].int {
+                article.id = id
+            }
+            
+            if let title: String = item["title"].string {
+                article.title = title
+            }
+            
+            if let author: String = item["author"].string {
+                article.author = author
+            }
+            
+            if let excerpt: String = item["excerpt"].string {
+                article.excerpt = excerpt
+            }
+            
+            if let content: String = item["content"].string {
+                article.content = content
+            }
+            
+            if let articleURL: String = item["permalink"].string {
+                article.articleURL = articleURL
+            }
+            
+            if let thumbnailURL: String = item["thumbnail"].string {
+                article.thumbnailURL = thumbnailURL
+            }
+            
+            if let dateString = item["date"].string,
+            let creationDate = dateFormatter.date(from: dateString) {
+                article.creationDate = creationDate
+            }
+            articles.append(article)
+        }
+        print(articles)
     }
 }
