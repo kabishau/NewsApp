@@ -16,6 +16,8 @@ class API {
     
     static let Feed_JSON_URL: URL = URL(string: "https://learnappmaking.com/feed/json")!
     
+    // defining custom notification type
+    static let articlesReceivedNotification = Notification.Name("articlesReceived")
     
     func requestArticles() -> Void {
         Alamofire.request(API.Feed_JSON_URL).responseJSON { (response) in
@@ -79,6 +81,9 @@ class API {
             }
             articles.append(article)
         }
-        print(articles)
+        
+        if articles.count > 0 {
+            NotificationCenter.default.post(name: API.articlesReceivedNotification, object: articles)
+        }
     }
 }
