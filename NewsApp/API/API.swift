@@ -1,6 +1,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 // global variable, it's outside the class
 // private makes it visible and accessible within current file
@@ -37,7 +38,9 @@ class API {
     
     func processArticles(json: JSON) {
         
-        var articles = [Article]()
+        let realm = try! Realm()
+        realm.beginWrite()
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
@@ -76,14 +79,21 @@ class API {
             }
             
             if let dateString = item["date"].string,
-            let creationDate = dateFormatter.date(from: dateString) {
+                let creationDate = dateFormatter.date(from: dateString) {
                 article.creationDate = creationDate
             }
-            articles.append(article)
+
+            realm.add(article, update: true)
         }
         
-        if articles.count > 0 {
-            NotificationCenter.default.post(name: API.articlesReceivedNotification, object: articles)
+        do {
+            try realm.commitWrite()
+            print("Commiting write...")
         }
+        catch (let error) {
+            print("Error is \(error)")
+        }
+        
+        NotificationCenter.default.post(name: API.articlesReceivedNotification, object: nil)
     }
 }
