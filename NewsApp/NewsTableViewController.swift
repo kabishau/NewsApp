@@ -15,10 +15,8 @@ class NewsTableViewController: UITableViewController {
     
     @objc func onArticlesRecieved(notification: Notification) {
         if let articles: [Article] = notification.object as? [Article] {
-            print(articles)
             self.articles = articles
             self.tableView.reloadData()
-            print("notification received")
         }
     }
 
@@ -50,8 +48,7 @@ class NewsTableViewController: UITableViewController {
         
         let detailVC = NewsDetailViewController(nibName: "NewsDetailViewController", bundle: nil)
         
-        //detailVC.title = titles[indexPath.row]
-        //detailVC.author = authors[indexPath.row]
+        detailVC.article = articles[indexPath.row]
         
         navigationController?.pushViewController(detailVC, animated: true)
     }

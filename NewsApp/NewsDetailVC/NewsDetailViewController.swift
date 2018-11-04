@@ -1,27 +1,51 @@
 import UIKit
+import Alamofire
 import WebKit
 
 class NewsDetailViewController: UIViewController, WKNavigationDelegate {
     
-    @IBOutlet weak var imageView: UIImageView?
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var authorLabel: UILabel?
-    @IBOutlet weak var webView: WKWebView?
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var webViewHeightConstraint: NSLayoutConstraint?
     
-    var author: String?
+    var article: Article?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel?.text = self.title
-        authorLabel?.text = self.author
+        imageView.image = nil
         
-        webView?.navigationDelegate = self
+        guard let article = article else { return }
+        self.title = article.title
+        titleLabel?.text = article.title
+        authorLabel?.text = article.author
         
-        let url = URL(string: "https://learnappmaking.com/lipsum.html")
-        let request = URLRequest(url: url!)
-        webView?.load(request)
+        if let imageUrl = URL(string: article.thumbnailURL) {
+            Alamofire.request(imageUrl).responseData { response in
+                if let data = response.result.value {
+                    self.imageView.image = UIImage(data: data)
+                }
+            }
+        }
+        
+        webView.navigationDelegate = self
+        // disable scrolling on the web view, so it won’t conflict with the scroll view
+        webView.scrollView.isScrollEnabled = false
+        webView.loadHTMLString("""
+            <html>
+                <head>
+                    <style>
+                        body { font-family: -apple-system, Helvetica; sans-serif;}
+                    </style>
+                    <meta name="viewpoint" content="width=device-width initial-scale=1>
+                </head>
+                <body>
+                    \(article.content)
+                </body>
+            </html>
+            """, baseURL: nil)
         
     }
     
