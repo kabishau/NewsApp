@@ -47,6 +47,13 @@ class NewsDetailViewController: UIViewController, WKNavigationDelegate {
             </html>
             """, baseURL: nil)
         
+        // google analytics
+        let build = GAIDictionaryBuilder.createScreenView().set("News Detail", forKey: kGAIScreenName).build() as NSDictionary
+        GAI.sharedInstance().defaultTracker.send(build as [NSObject : AnyObject])
+        
+        GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEvent(withCategory: "ui_action", action: "article_view", label: article.title, value: nil).build() as [NSObject : AnyObject])
+        
+        
     }
     
     // don't need to call in directly; it's called right after web view finishes loading

@@ -17,6 +17,10 @@ class NewsTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(onArticlesRecieved(notification:)), name: API.articlesReceivedNotification, object: nil)
         
         API.sharedInstance.requestArticles()
+        
+        // google analytics
+        let build = GAIDictionaryBuilder.createScreenView().set("News Overview", forKey: kGAIScreenName).build() as NSDictionary
+        GAI.sharedInstance().defaultTracker.send(build as [NSObject: AnyObject])
 
     }
     
