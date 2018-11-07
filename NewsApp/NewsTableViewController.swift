@@ -1,11 +1,18 @@
 import UIKit
+import RealmSwift
 
 class NewsTableViewController: UITableViewController {
     
-    var articles = [Article]()
+    var articles: Results<Article> {
+        get {
+            let realm = try! Realm()
+            return realm.objects(Article.self)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         NotificationCenter.default.addObserver(self, selector: #selector(onArticlesRecieved(notification:)), name: API.articlesReceivedNotification, object: nil)
         
@@ -14,10 +21,7 @@ class NewsTableViewController: UITableViewController {
     }
     
     @objc func onArticlesRecieved(notification: Notification) {
-        if let articles: [Article] = notification.object as? [Article] {
-            self.articles = articles
-            self.tableView.reloadData()
-        }
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
