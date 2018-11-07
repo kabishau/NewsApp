@@ -15,6 +15,8 @@
 		6B2330312174E4E0003492D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B2330302174E4E0003492D3 /* Assets.xcassets */; };
 		6B2330342174E4E0003492D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B2330322174E4E0003492D3 /* LaunchScreen.storyboard */; };
 		6B23303C2174E842003492D3 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B23303B2174E842003492D3 /* NewsTableViewController.swift */; };
+		6B33B38E21925D2A000E6898 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B33B38D21925D2A000E6898 /* SystemConfiguration.framework */; };
+		6B33B39021925D3C000E6898 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B33B38F21925D3C000E6898 /* libz.tbd */; };
 		6B4D0E9E2187A2EE00EBF914 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B4D0E9D2187A2EE00EBF914 /* Podfile */; };
 		6B4D0EA12187A38500EBF914 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4D0EA02187A38500EBF914 /* API.swift */; };
 		BFE5DA787A5A8227E02D5CC6 /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71E94E9D35122D6800FDB93 /* Pods_NewsApp.framework */; };
@@ -32,6 +34,9 @@
 		6B2330332174E4E0003492D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B2330352174E4E0003492D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B23303B2174E842003492D3 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		6B33B38C21925C03000E6898 /* NewsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		6B33B38D21925D2A000E6898 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6B33B38F21925D3C000E6898 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6B4D0E9D2187A2EE00EBF914 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6B4D0EA02187A38500EBF914 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A71E94E9D35122D6800FDB93 /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B33B39021925D3C000E6898 /* libz.tbd in Frameworks */,
+				6B33B38E21925D2A000E6898 /* SystemConfiguration.framework in Frameworks */,
 				5B24FF842176C1EB00AF0D33 /* WebKit.framework in Frameworks */,
 				BFE5DA787A5A8227E02D5CC6 /* Pods_NewsApp.framework in Frameworks */,
 			);
@@ -63,6 +70,8 @@
 		5B24FF822176C1EB00AF0D33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B33B38F21925D3C000E6898 /* libz.tbd */,
+				6B33B38D21925D2A000E6898 /* SystemConfiguration.framework */,
 				5B24FF832176C1EB00AF0D33 /* WebKit.framework */,
 				A71E94E9D35122D6800FDB93 /* Pods_NewsApp.framework */,
 			);
@@ -72,6 +81,7 @@
 		6B23301D2174E4DE003492D3 = {
 			isa = PBXGroup;
 			children = (
+				6B33B38C21925C03000E6898 /* NewsApp-Bridging-Header.h */,
 				6B4D0E9D2187A2EE00EBF914 /* Podfile */,
 				6B2330282174E4DE003492D3 /* NewsApp */,
 				6B2330272174E4DE003492D3 /* Products */,
@@ -391,6 +401,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kabishau.NewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NewsApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -410,6 +421,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kabishau.NewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NewsApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
